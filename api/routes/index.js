@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+import { config } from 'dotenv';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Emre' });
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
+  res.render('index', { title: 'Emre', config });
 });
 
-module.exports = router;
+export default router;
